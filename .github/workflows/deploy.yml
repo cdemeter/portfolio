@@ -34,6 +34,6 @@ jobs:
           password: ${{ secrets.DREAMHOST_PASSWORD }}
           protocol: sftp
           port: 22
-          server-dir: chrisdemeter.com/
+          server-dir: chrisdemeter.com/portfolio/
           local-dir: ./out/
           dangerous-clean-slate: false

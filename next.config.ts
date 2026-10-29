@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* Static export for DreamHost */
+  /* Static export for DreamHost subfolder */
   output: "export",
+  basePath: "/portfolio",
   images: {
     unoptimized: true,
   },
