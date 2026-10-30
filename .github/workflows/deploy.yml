@@ -26,14 +26,11 @@ jobs:
       - name: Build Static Export
         run: npm run build
 
-      - name: Deploy to DreamHost via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.DREAMHOST_HOST }}
-          username: ${{ secrets.DREAMHOST_USER }}
-          password: ${{ secrets.DREAMHOST_PASSWORD }}
-          protocol: sftp
-          port: 22
-          server-dir: chrisdemeter.com/portfolio/
-          local-dir: ./out/
-          dangerous-clean-slate: false
+      - name: Deploy to DreamHost via Rsync over SSH
+        env:
+          SSHPASS: ${{ secrets.DREAMHOST_PASSWORD }}
+          DH_USER: ${{ secrets.DREAMHOST_USER }}
+          DH_HOST: ${{ secrets.DREAMHOST_HOST }}
+        run: |
+          sudo apt-get update && sudo apt-get install -y sshpass
+          sshpass -e rsync -avz -e "ssh -o StrictHostKeyChecking=no -p 22" ./out/ $DH_USER@$DH_HOST:/home/$DH_USER/chrisdemeter.com/portfolio/
