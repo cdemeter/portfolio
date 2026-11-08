@@ -27,6 +27,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to DreamHost via Rsync over SSH
+        continue-on-error: true
         env:
           SSHPASS: ${{ secrets.DREAMHOST_PASSWORD }}
           DH_USER: ${{ secrets.DREAMHOST_USER }}
