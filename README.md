@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+An emerging, constantly updated, engineered software platform: showcase
+•  Built on Next.js 16 + React 19 + TypeScript + Tailwind 4.
+•  Features Three.js WebGL physics simulation, Houdini Vertex Animation Textures (VAT), and procedural Web Audio API sound synthesis.
+•  Automated with GitHub Actions CI/CD pipeline publishing static exports.
 
 ## Getting Started
 
