@@ -1,6 +1,9 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
+import PaperLabCanvas from "@/components/lab/PaperLabCanvas";
+import { SgiFolderIcon } from "@/components/irix/IrixIcons";
 
 type Track = "all" | "fullstack" | "design" | "creative";
 
@@ -256,6 +259,11 @@ export default function Home() {
             >
               Get in Touch
             </a>
+            <Link href="/desktop" className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-900/90 hover:bg-[#c2b49c] hover:text-slate-950 border border-slate-700 hover:border-[#c2b49c] text-slate-200 transition-colors shadow-sm group" title="Return to SGI IRIX Interactive Desktop"
+            >
+              <SgiFolderIcon className="w-5 h-5 -my-1 transition-transform group-hover:scale-110" />
+              <span className="font-semibold">SGI Desktop (/)</span>
+            </Link>
           </nav>
         </div>
       </header>
@@ -265,7 +273,7 @@ export default function Home() {
         <section className="space-y-6 pt-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-slate-900 border border-slate-800 text-slate-400">
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            Full Stack Developer · UX Engineer · Creative Technologist
+            Full Stack Developer · Data Engineer · UX Engineer · Creative Technologist
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-[1.1]">
@@ -328,6 +336,10 @@ export default function Home() {
               Active Prototyping
             </span>
           </div>
+          {/* 3D Paper Lab Canvas */}
+          <div className="mt-6">
+            <PaperLabCanvas />
+          </div>
         </section>
 
         {/* 3-Track Filter Tabs */}
@@ -345,41 +357,37 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-slate-900 border border-slate-800">
               <button
                 onClick={() => setActiveTrack("all")}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                  activeTrack === "all"
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${activeTrack === "all"
                     ? "bg-cyan-500 text-slate-950 shadow-md font-semibold"
                     : "text-slate-400 hover:text-white"
-                }`}
+                  }`}
               >
                 All Work ({projects.length})
               </button>
               <button
                 onClick={() => setActiveTrack("fullstack")}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                  activeTrack === "fullstack"
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${activeTrack === "fullstack"
                     ? "bg-cyan-500 text-slate-950 shadow-md font-semibold"
                     : "text-slate-400 hover:text-white"
-                }`}
+                  }`}
               >
                 💻 Full-Stack &amp; Systems
               </button>
               <button
                 onClick={() => setActiveTrack("design")}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                  activeTrack === "design"
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${activeTrack === "design"
                     ? "bg-cyan-500 text-slate-950 shadow-md font-semibold"
                     : "text-slate-400 hover:text-white"
-                }`}
+                  }`}
               >
                 🎨 UI/UX &amp; Design Systems
               </button>
               <button
                 onClick={() => setActiveTrack("creative")}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                  activeTrack === "creative"
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${activeTrack === "creative"
                     ? "bg-cyan-500 text-slate-950 shadow-md font-semibold"
                     : "text-slate-400 hover:text-white"
-                }`}
+                  }`}
               >
                 🕹️ 3D, WebGL &amp; Creative Media
               </button>

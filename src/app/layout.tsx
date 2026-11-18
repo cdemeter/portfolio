@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Christopher Demeter — Full Stack Developer, UX Engineer & Creative Technologist",
+  title: "Christopher Demeter — Full Stack Developer, Data Engineer, UX Engineer & Creative Technologist",
   description:
-    "Portfolio of Christopher Demeter: Full-Stack Systems, Human-Centered UI/UX Design, and Multimedia/3D Creative Technology.",
+    "Portfolio of Christopher Demeter: Full-Stack Systems, Data Engineering, Human-Centered UI/UX Design, and Multimedia/3D Creative Technology.",
 };
 
 export default function RootLayout({
